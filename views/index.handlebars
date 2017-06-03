@@ -1,0 +1,36 @@
+<h1>Eat the Burger</h1>
+
+<div>
+  <h2>Add a Burger</h2>
+  <form action="/api/">
+    <label for="newBurger">New Burger:</label>
+    <input type="text" name="newBurger" id="newBurger"/>
+    <input type="submit" name="burgerSubmit" value="Add the Burger">
+  </form>
+</div>
+
+<div class="half-width-column">
+  <h2>Uneaten Burgers</h2>
+  <ul>
+    {{#each burger}}
+      {{#if !(burger.devoured)}}
+        <li>
+          <h3>burger.name</h3>
+          <form action="/api/" method="post">
+            
+          </form>
+        </li>
+      {{/if}}
+    {{/each}}
+  </ul>
+</div>
+<div class="half-width-column">
+  <h2>Eaten Burgers</h2>
+  <ul>
+    {{#each burger}}
+      {{#if burger.devoured}}
+        <li><h3>{{burger.name}}</h3></li>
+      {{/if}}
+    {{/each}}
+  </ul>
+</div>
